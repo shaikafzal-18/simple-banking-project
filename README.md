@@ -12,3 +12,13 @@ A robust, command-line interface (CLI) banking application built with Python. Th
 - **User-Friendly Interface:** Clear, menu-driven navigation.
 
 ## 🛠️ Tech Stack
+
+- **Language:** Python 3.x
+- **Concepts Used:** Functions, Global Variables, Control Flow (If/Else), Loops, and Dictionaries.
+
+## 📋 How to Use
+
+1. **Prerequisites:** Ensure you have Python installed on your machine.
+2. **Clone the Repository:**
+   ```bash
+   git clone [https://github.com/shaikafzal-18/simple-banking-project.git](https://github.com/shaikafzal-18/simple-banking-project.git)
