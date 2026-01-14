@@ -1,8 +1,8 @@
-balance = 0.0
-kyc_documents = {}
-def check_balance():
-    print(f"Your current balance is {balance}.")
-    print("======================")
+import json
+class BankAccount:
+    def __init__(self):
+        self.balance = 0.0
+        self.kyc_documents = {}
 
     def check_balance(self):
         print(f"Your current balance is {self.balance}.")
