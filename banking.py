@@ -18,18 +18,18 @@ def deposit(amount):
         print(f"Your current balance is {balance}.")
         print("======================")
 
-def withdraw(amount):
-    global balance
-    if amount == 0:
-        print("Please enter a valid amount to withdraw.")
-        print("======================")
-    elif amount > balance:
-        print("Insufficient balance.")
-        print("======================")
-    else:
-        balance -= amount
-        print(f"The amount {amount} is withdrawn Successfully.")
-        print("======================")
+
+    def withdraw(self,amount):
+        if amount <= 0:
+            print("Please enter a valid amount to withdraw.")
+            print("======================")
+        elif amount > self.balance:
+            print("Insufficient balance.")
+            print("======================")
+        else:
+            self.balance -= amount
+            print(f"The amount {amount} is withdrawn Successfully.")
+            print("======================")
 
     def update_kyc(self,docs):
         self.kyc_documents.update(docs)
