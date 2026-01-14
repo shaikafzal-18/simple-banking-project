@@ -31,20 +31,8 @@ def withdraw(amount):
         print(f"The amount {amount} is withdrawn Successfully.")
         print("======================")
 
-def update_kyc(docs):
-    global kyc_documents
-    kyc_documents.update(docs)
-
-def check_kyc():
-    if len(kyc_documents) == 0:
-        print("You have no kyc documents.")
-        print("======================")
-
-    else:
-        for doc in kyc_documents:
-            print(f"{doc}: {kyc_documents[doc]}")
-            print("======================")
-
+    def update_kyc(self,docs):
+        self.kyc_documents.update(docs)
 
 if __name__ == "__main__":
     print("******Welcome to the Banking System******")
