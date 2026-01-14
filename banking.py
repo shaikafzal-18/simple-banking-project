@@ -80,7 +80,38 @@ if __name__ == "__main__":
             print("Quitting. Have a Nice day!")
             break
         else:
-            print("Invalid choice, please try again")
+            for key, value in self.kyc_documents.items():
+                print(f"{key}: {value}")
+
+def save_account(account):
+    with open("account.json", "w") as file:
+        json.dump({
+            "balance": account.balance,
+            "kyc": account.kyc_documents
+        }, file)
+
+def load_account():
+    try:
+        with open("account.json", "r") as file:
+            data = json.load(file)
+            account=BankAccount()
+            account.balance=data["balance"]
+            account.kyc_documents=data["kyc"]
+            return account
+    except FileNotFoundError:
+        return BankAccount()
+
+if __name__ == "__main__":
+    account = load_account()
+    print("****** Welcome to the Banking System ******")
+
+    while True:
+        print("1. Check Balance")
+        print("2. Deposit Amount")
+        print("3. Withdraw Amount")
+        print("4. Check KYC Documents")
+        print("5. Update KYC Documents")
+        print("6. Quit")
 
         choice = input("Enter your choice: ")
 
