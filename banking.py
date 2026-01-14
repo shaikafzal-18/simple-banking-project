@@ -82,5 +82,43 @@ if __name__ == "__main__":
         else:
             print("Invalid choice, please try again")
 
-print()
-print("Thank you for using Banking System")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            account.check_balance()
+
+        elif choice == '2':
+            try:
+                amt = float(input("Enter amount to deposit: "))
+                account.deposit(amt)
+                save_account(account)
+            except ValueError:
+                print("Please enter a numeric value.")
+
+        elif choice == '3':
+            try:
+                amt = float(input("Enter amount to withdraw: "))
+                account.withdraw(amt)
+                save_account(account)
+            except ValueError:
+                print("Please enter a numeric value.")
+
+        elif choice == '4':
+            account.check_kyc()
+
+        elif choice == '5':
+            kyc_docs = {}
+            n = int(input("Number of documents: "))
+            for _ in range(n):
+                key = input("Document name: ")
+                value = input("Document value: ")
+                kyc_docs[key] = value
+            account.update_kyc(kyc_docs)
+            save_account(account)
+
+        elif choice == '6':
+            print("Thank you for using Banking System!")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
