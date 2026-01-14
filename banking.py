@@ -8,12 +8,13 @@ def deposit(amount):
     if amount == 0:
         print("Please enter a valid amount to deposit.")
         print("======================")
-    elif amount < 0:
-        print("Please enter a valid amount to deposit.")
-        print("======================")
-    else:
-        global balance
-        balance += amount
+
+    def deposit(self,amount):
+        if amount <= 0:
+            print("Please enter a valid amount to deposit.")
+            print("======================")
+            return
+        self.balance += amount
         print(f"The amount {amount} is deposited Successfully.")
         print(f"Your current balance is {balance}.")
         print("======================")
