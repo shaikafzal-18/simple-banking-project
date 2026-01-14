@@ -4,9 +4,8 @@ def check_balance():
     print(f"Your current balance is {balance}.")
     print("======================")
 
-def deposit(amount):
-    if amount == 0:
-        print("Please enter a valid amount to deposit.")
+    def check_balance(self):
+        print(f"Your current balance is {self.balance}.")
         print("======================")
 
     def deposit(self,amount):
