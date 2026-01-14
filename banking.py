@@ -34,39 +34,9 @@ def withdraw(amount):
     def update_kyc(self,docs):
         self.kyc_documents.update(docs)
 
-if __name__ == "__main__":
-    print("******Welcome to the Banking System******")
-    while True:
-        print("1. Check your balance")
-        print("2. Deposit an amount")
-        print("3. Withdraw an amount")
-        print("4. Check your kyc documents")
-        print("5. Update your kyc documents")
-        print("6. Quit")
-        choice = input("Enter your choice: ")
-        if choice == '1':
-            check_balance()
-        elif choice == '2':
-            amt = float(input("Enter the amount to deposit: "))
-            deposit(amt)
-        elif choice == '3':
-            amt = float(input("Enter the amount to withdraw: "))
-            withdraw(amt)
-        elif choice == '4':
-            check_kyc()
-        elif choice == '5':
-            kyc_docs = {}
-            n_documents = int(input("Enter the number of documents you want to add: "))
-            for i in range(n_documents):
-                key = input("Enter the document's key: ")
-                value = input("Enter the document's value: ")
-                kyc_docs[key] = value
-            update_kyc(kyc_docs)
-            print(f"====KYC Updated Successfully!!!====")
-
-        elif choice == '6':
-            print("Quitting. Have a Nice day!")
-            break
+    def check_kyc(self):
+        if not self.kyc_documents:
+            print("No kyc documents found.")
         else:
             for key, value in self.kyc_documents.items():
                 print(f"{key}: {value}")
